@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>ColorChanger</title>
+  </head>
+  <body>
+    <section>
+      <div class="bg">Rouge</div>
+      <select class="selectcolor" onchange="changeColor(this)">
+        <option value="#ff2323">Rouge</option>
+        <option value="#66ff00">Vert</option>
+        <option value="#9b1fe8">Violet</option>
+        <option value="#ffff12">Jaune</option>
+        <option value="#ff69b4">Rose</option>
+      </select>
+    </section>
+    <script>
+      function changeColor(getColor) {
+        let bg = document.querySelector(".bg");
+        let selectcolor = getColor.value;
+        let text = getColor.options[getColor.selectedIndex].text;
+        bg.style.background = selectcolor;
+        bg.innerHTML = text;
+      }
+    </script>
+  </body>
+</html>
